@@ -23,7 +23,6 @@ ESC_nd = b'\x1B\x26' # Define user-defined characters [p. 113] {was ESC-&}
 ESC_hy = b'\x1B\x2D' # Turn underline mode on/off [p. 118] {was ESC--}
 ESC_E = b'\x1B\x45' # Turn emphasized mode on/off [p. 122]
 ESC_G = b'\x1B\x47' # Turn double-strike mode on/off [p. 123]
-ESC_M = b'\x1B\x4D' # Select character font [p. 124]
 ESC_R = b'\x1B\x52' # Select an international character set [p. 128]
 ESC_r = b'\x1B\x72' # Select print color [p. 133]
 ESC_t = b'\x1B\x74' # Select character code table [p. 135]
@@ -61,7 +60,7 @@ ESC_m = b'\x1B\x6D' # Partial cut (three points left uncut) [p. 370]
 
 # Miscellaneous commands
 #
-ESC_at = b'\x1B\x40' # Initalize printer [p. 410] {was ESC-at}
+ESC_at = b'\x1B\x40' # Initialize printer [p. 410] {was ESC-@}
 ESC_p = b'\x1B\x70' # Generate pulse [p. 416] {drawer}
 GS_E = b'\x1D\x45' # Select print head control method [p. 454]
 
@@ -76,4 +75,4 @@ FS_C = b'\x1C\x43' # Select Kanji character code system [p. 503]
 FS_S = b'\x1C\x53' # Set Kanji character spacing [p. 505]
 FS_W = b'\x1C\x57' # Turn quadruple-size mode on/off for Kanji characters [p. 507]
 
-# The vertical feed unit is 1/144 inch(0.5 dots) and the line unitn is 1/6 inch(12 dots)
+# The vertical motion unit is 1/144 inch(0.5 dots) and the line height is 1/6 inch(12 dots)
