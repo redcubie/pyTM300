@@ -73,3 +73,15 @@ def status():
     ser.write(const.ESC_u) # Sends command to retrieve status
     read = ser.read() # Reads reply
     return(ord(read) & ord(b'\x01')) # Does bitwise operation to determine if the drawer is open
+
+def bitmap(data, length=0, density=0):
+    if length == 0:
+        length = len(data)
+    if 0 < length < 1023:
+        # length_lower = int(length & ord('\xff')).to_bytes()
+        # length_higher = int((length & ord('\x03')<<8)>>8).to_bytes()
+        
+        # ser.write(const.ESC_st + bytes(density) + length_lower + length_higher + bytes(data))
+        ser.write(const.ESC_st + density.to_bytes(1, "little") + length.to_bytes(2, "little") + bytes(data))
+    else:
+        raise Exception
