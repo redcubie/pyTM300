@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 
-import pyTM300
+from pyTM300 import TM300, const
 
-pyTM300.open("COM5")
-pyTM300.initialize()
+printer = TM300("COM5")
+printer.initialize()
 
 bitmap = b'\x11\x23\x65\x87\x76\x34'
 
-pyTM300.bitmap(bitmap)
+printer.bitmap(bitmap)
 
-pyTM300.ser.write(b'\n\n\n\n\n\n\n\n')
-pyTM300.cut()
+printer.write(b'\n\n\n\n\n\n\n\n')
+printer.cut()
 
-pyTM300.close()
+printer.close()
